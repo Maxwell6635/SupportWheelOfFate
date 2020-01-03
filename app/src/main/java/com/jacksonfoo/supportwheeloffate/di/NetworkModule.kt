@@ -38,7 +38,7 @@ val networkModule = module {
 
     single {
         Retrofit.Builder()
-            .baseUrl("http://www.mocky.io/v2")
+            .baseUrl("http://www.mocky.io/v2/")
             .addConverterFactory(GsonConverterFactory.create(get()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(get())

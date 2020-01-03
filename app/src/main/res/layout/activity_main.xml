@@ -3,6 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.jacksonfoo.supportwheeloffate.ui.main.MainViewModel" />
+    </data>
+
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,15 +40,19 @@
             tools:showIn="@layout/activity_main">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_engineers"
+                android:id="@+id/rv_engineer"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:layout_constraintBottom_toTopOf="@+id/btn_generate"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:repositories="@{vm.engineerList}"
+                app:viewModel="@{vm}" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_generate"
