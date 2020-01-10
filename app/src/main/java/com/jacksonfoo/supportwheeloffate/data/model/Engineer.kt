@@ -7,5 +7,7 @@ data class Engineer(
     val id: Int,
 
     @SerializedName("name")
-    val name: String
+    val name: String,
+
+    var shiftSlot : Int = 0
 )
